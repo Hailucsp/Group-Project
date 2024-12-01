@@ -19,12 +19,17 @@ import com.mycompany.Teacher;
 
 public class Simulation {
     public static void main(String[] args) {
+        // ArrayList to contain the survivors 
         ArrayList<Character> survivors = new ArrayList<>();
+        // ArrayList to contain the zombies 
         ArrayList<Character> zombies = new ArrayList<>();
+        // ArrayList to contain the random survivor types
         ArrayList<String> survivorTypes = new ArrayList<>();
+        // ArrayList to contain the random zombie types
         ArrayList<String> zombieTypes = new ArrayList<>();
-
+        // creating a random object
         Random random = new Random();
+        // setting the count for child, teacher, and soldier to 0
         int childCount = 0, teacherCount = 0, soldierCount = 0;
         for (int i = 0; i < 5; i++) {
             int survivorType = random.nextInt(3);
