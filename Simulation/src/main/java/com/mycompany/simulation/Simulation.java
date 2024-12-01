@@ -87,13 +87,19 @@ public class Simulation {
                     }
                 }
             }
-
+            //iterate through each zombie in the list
             for (int i = 0; i < zombies.size(); i++) {
+                //check if the zombie is still alive
                 if (zombies.get(i).isAlive()) {
+                    //iterate through the survivor
                     for (int j = 0; j < survivors.size(); j++) {
+                        //check if the current survivor is still alive
                         if (survivors.get(j).isAlive()) {
+                            //Zombie attacks the survior and their health reduces.
                             zombies.get(i).attacking(survivors.get(j));
+                            //if the survivor dies
                             if (!survivors.get(j).isAlive()) {
+                                //add the message to killist showing which zombie killed which survivor
                                 killList.add(zombieTypes.get(i) + " " + i + " killed " +
                                         survivorTypes.get(j) + " " + j);
                             }
