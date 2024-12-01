@@ -5,14 +5,10 @@
 
 /**
  *
- * @author chris
+ * @author chris, connor
  */
-public class Tank extends Character{
-    
-    private int TANK_HEALTH;
-    private int TANK_DAMAGE;
-    
-    public Tank(){
-    
+public class Tank extends Character {
+    public Tank() {
+        super(150, 20);
     }
 }
