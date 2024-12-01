@@ -69,17 +69,26 @@ public class Simulation {
         System.out.println("But there are " + zombies.size() + " zombies waiting for them (" +
                 commonInfectedCount + " common infected, " + tankCount + " tanks)\n");
 
-        int survivorIndex = 0;
-        int zombieIndex = 0;
-        ArrayList<String> killList = new ArrayList<>();
+        //Initialize variables for tracking survivors and zombieduring the battle
+        int survivorIndex = 0; //Track the index of the current survivor
+        int zombieIndex = 0; //Track the index of the current zombie
+        ArrayList<String> killList = new ArrayList<>(); //Store the message of who killed whom
 
         while (true) {
+            //Loop through each survivor in the list
             for (int i = 0; i < survivors.size(); i++) {
+                //check if the survivor is still alive
                 if (survivors.get(i).isAlive()) {
+                    //loop through each zombies in the list
                     for (int j = 0; j < zombies.size(); j++) {
+                        //check if the zombie is still alive
                         if (zombies.get(j).isAlive()) {
+                            //survivor attacks the zombie decreasing its health
                             survivors.get(i).attacking(zombies.get(j));
+
+                            //if the zombie is killed from this attack 
                             if (!zombies.get(j).isAlive()) {
+                                //add the message to killist array of which survivor killed which zombie
                                 killList.add(survivorTypes.get(i) + " " + i + " killed " +
                                         zombieTypes.get(j) + " " + j);
                             }
