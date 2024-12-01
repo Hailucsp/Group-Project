@@ -5,14 +5,10 @@
 
 /**
  *
- * @author chris
+ * @author chris, connor
  */
-public class Child extends Character{
-    
-    private int CHILD_HEALTH;
-    private int CHILD_DAMAGE;
-    
-    public Child(){
-        System.out.println("hello");
+public class Child extends Character {
+    public Child() {
+        super(20, 2);
     }
 }
