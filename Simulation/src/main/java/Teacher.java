@@ -5,13 +5,10 @@
 
 /**
  *
- * @author chris
+ * @author chris, connor 
  */
-public class Teacher extends Character{
-    private int TEACHER_HEALTH;
-    private int TEACHER_DAMAGE;
-    
-    public Teacher(){
-    
+public class Teacher extends Character {
+    public Teacher() {
+        super(50, 5); 
     }
 }
