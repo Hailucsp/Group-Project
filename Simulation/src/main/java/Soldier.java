@@ -8,7 +8,10 @@
  * @author chris
  */
 public class Soldier extends Character {
+    // Soldier constructor 
     public Soldier() {
+        // super that extends to the Character class's consturctor attributes.
+        // first number being the health, second number being the attack
         super(100, 10);
     }
 }
