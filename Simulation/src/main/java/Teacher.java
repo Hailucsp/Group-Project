@@ -8,7 +8,10 @@
  * @author chris, connor 
  */
 public class Teacher extends Character {
+    // Teahcer constructor 
     public Teacher() {
+        // super that extends to the Character class's consturctor attributes.
+        // first number being the health, second number being the attack
         super(50, 5); 
     }
 }
