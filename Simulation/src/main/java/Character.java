@@ -5,13 +5,18 @@
 
 /**
  *
- * @author chris
+ * @author chris, connor
  */
 public class Character {
-    
-    private int health;
-    private int attack;
+    protected int health;
+    protected int attack;
     public boolean alive;
+
+    public Character(int health, int attack) {
+        this.health = health;
+        this.attack = attack;
+        this.alive = true;
+    }
 
     public int getHealth() {
         return health;
@@ -36,15 +41,17 @@ public class Character {
     public void setAlive(boolean alive) {
         this.alive = alive;
     }
-    
-    
-    public int attacked(int damage){
-        
-        return damage;   //probably will be changed later 
+
+    public void attacked(int damage) {
+        this.health -= damage;
+        if (this.health <= 0) {
+            this.alive = false;
+        }
     }
-    public int attacking(){
-        
-        return attack;  //probably will be changed later 
+
+    public void attacking(Character target) {
+        if (this.alive) {
+            target.attacked(this.attack);
+        }
     }
-    
 }
