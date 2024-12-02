@@ -116,37 +116,37 @@ public class Simulation {
                     }
                 }
             }
-
+            // Gets alive survivors and zombies, checks for who has remaining counts of zombies and survivors
             int aliveSurvivors = 0;
             for (Character survivor : survivors) {
                 if (survivor.isAlive()) {
                     aliveSurvivors++;
                 }
             }
-
+            
             int aliveZombies = 0;
             for (Character zombie : zombies) {
                 if (zombie.isAlive()) {
                     aliveZombies++;
                 }
             }
-
+            // Break condition if no one is left alive, zombies or survivors
             if (aliveSurvivors == 0 || aliveZombies == 0) {
                 break;
             }
         }
-
+        // Prints killList's report
         for (String report : killList) {
             System.out.println(report);
         }
-
+        // Checks for count of survivors
         int survivingCount = 0;
         for (Character survivor : survivors) {
             if (survivor.isAlive()) {
                 survivingCount++;
             }
         }
-
+        //Prints scenarios depending on if any survivors made it or not
         if (survivingCount == 0) {
             System.out.println("None of the survivors made it.");
         } else {
